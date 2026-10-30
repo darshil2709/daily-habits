@@ -1,56 +1,94 @@
-# Welcome to your Expo app 👋
+# Daily Habits
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A small React Native habit tracker built with Expo and TypeScript. This is a learning project for practising mobile app development, VS Code, Git, and GitHub.
 
-## Get started
+## What it does
 
-1. Install dependencies
+- Add a habit to your daily list
+- Tap a habit to mark it complete or incomplete
+- Remove a habit
+- See how many habits are complete
+- Keep your habit list and completion states saved on your device between app launches
 
-   ```bash
-   npm install
-   ```
+**Current limitation:** completion states are saved as-is. The app does not yet reset them automatically each day.
 
-2. Start the app
+## Built with
 
-   ```bash
-   npx expo start
-   ```
+- React Native
+- Expo SDK 58
+- TypeScript
+- AsyncStorage for on-device persistence
 
-In the output, you'll find options to open the app in a
+## Run the app
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Requirements
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Node.js and npm
+- Git
+- Visual Studio Code
+- Expo Go on an iOS or Android phone
 
-## Get a fresh project
+### Setup
 
-When you're ready, run:
+Clone the repository and enter its folder:
 
 ```bash
-npm run reset-project
+git clone https://github.com/darshil2709/daily-habits.git
+cd daily-habits
 ```
 
-This command will move the starter code to the **example** directory and create a blank **src/app** directory where you can start developing.
+Install the project dependencies:
 
-### Other setup steps
+```bash
+npm install
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+Start Expo:
 
-## Learn more
+**Windows PowerShell**
 
-To learn more about developing your project with Expo, look at the following resources:
+```powershell
+npx.cmd expo start
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+**macOS, Linux, or Command Prompt**
 
-## Join the community
+```bash
+npx expo start
+```
 
-Join our community of developers creating universal apps.
+Scan the QR code with Expo Go to open the app. On a physical iPhone, sign in to Expo Go and Expo CLI with the same Expo account. If the terminal reports that the CLI is not signed in, run `npx.cmd expo login` in PowerShell or `npx expo login` in another shell.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Where to find the code
+
+- `src/app/index.tsx` — the habit tracker screen, state, actions, persistence, and styles
+- `src/app/_layout.tsx` — app navigation and shared screen setup
+- `src/app/explore.tsx` — the starter template's Explore tab
+- `src/constants/theme.ts` — shared theme and spacing values
+- `assets/` — images and icons used by the starter app
+
+## What this project helps you learn
+
+- **TypeScript:** types, arrays, objects, and function parameters
+- **React:** components, state with `useState`, and effects with `useEffect`
+- **React Native:** text, inputs, buttons, lists, layouts, and styles
+- **Persistence:** saving and loading data with AsyncStorage
+- **Git:** checking changes, making commits, and pushing them to GitHub
+
+## Useful Git commands
+
+```bash
+git status
+git add .
+git commit -m "Describe your change"
+git push
+```
+
+Each commit is a named checkpoint in the project history. Push uploads your local commits to GitHub.
+
+## Next improvements
+
+- Reset completion status at the start of a new day
+- Let users edit habit names
+- Add a weekly progress view
+- Add tests for habit actions and persistence
